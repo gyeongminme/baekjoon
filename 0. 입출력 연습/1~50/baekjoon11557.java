@@ -1,31 +1,31 @@
-package asd;
+package 백준;
 import java.util.Scanner;
 
 public class baekjoon11557 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int T = scan.nextInt();
-        int N = 0;
-        for(int i = 0 ; i <T ; i++){
-            N = scan.nextInt();
-            String arr[] = new String[N];
-            int ar[] = new int[N];
+        int n = scan.nextInt();
+        scan.nextLine();
+
+        for(int i = 0 ; i < n ; i ++){
+            int a = scan.nextInt();
+            String[] arr = new String[a];
+            int[] intArr = new int[a];
+
+            int max_sul = 0;
             int max = 0;
-            int index = -1;
-            for(int j = 0 ; j<N ;j++){
+            for(int j = 0 ; j < a ; j++){
                 arr[j] = scan.next();
-                ar[j] = scan.nextInt();
-                if(max < ar[j]){
-                    max = ar[j];
-                    index = j;
+                intArr[j] = scan.nextInt();
+
+                if ( max_sul < intArr[j]){
+                    max_sul = intArr[j];
+                    max = j;
                 }
+
             }
-            if(index==-1){
-                return;
-            }
-            else {
-                System.out.println(arr[index]);
-            }
+            System.out.println(arr[max]);
+
         }
 
     }
